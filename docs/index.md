@@ -1,5 +1,8 @@
 # Air Quality Data Exchange (AQDx) Standard Format Guidance
 Version 3.0 - January 2025
+
+[Download the Full Specification (PDF)](pdf/aqdx_standard.pdf){ .md-button .md-button--primary }
+
 ## Introduction
 Air monitoring is fundamentally changing. With new technology emerging, a wide range of organizations and individuals can now measure air pollution. Additionally, more organizations want to collect and aggregate these new datasets. With all these advances, the potential exists for organizations to integrate and harness these data to create transformative and systemic change. Many challenges exist for organizations collecting air quality data such as exchanging, integrating, harmonizing, and using these new data sources. There are too many data formats and ways to name parameters, little consistency in time formatting, various ways to indicate data quality, and more. This results in data that are more expensive to manage, harder to exchange, and not fully utilized. Universal methods are urgently needed for describing and exchanging data between organizations and their data management systems. Establishing standard parameter names, conventions for time reporting, and data quality levels will make it easier for organizations to collect and exchange data with many other organizations. Figure 1 shows how data exchange between organizations/systems needs a common format that describes the data, its collection, and its quality.
 
