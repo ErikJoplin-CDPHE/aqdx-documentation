@@ -21,6 +21,7 @@ These fields define *what* was measured, *when* it was measured, and *how much* 
 **Example:** `"2008-10-08T12:00:43-06:00"`
 
 The date and time of the data value. It must follow the "Date and time with the offset" ISO 8601 format `YYYY-MM-DDThh:mm:ssTZD`, where `TZD` is the Time Zone Designator (offset from UTC). See also: https://en.wikipedia.org/wiki/ISO_8601
+
 *   **Precision:** For data reporting faster than 1Hz (less than one second), report seconds with a decimal (ss.sss). The maximum allowed precision is milliseconds, translating to a maximum allowed string length of 29 characters.
 *   **Timing:** The timestamp corresponds to the **beginning** of the averaging or sampling period.
 *   **Time Zone:** Must include the offset (e.g., `-06:00` for CST, `+00:00` for UTC). Do not use "Z" for UTC.
@@ -30,6 +31,7 @@ The date and time of the data value. It must follow the "Date and time with the 
 **Example:** `"44201"` (Ozone)
 
 A 5-digit numerical code that identifies the parameter being measured. These codes are based on the EPA's Air Quality System (AQS) parameter library.
+
 *   **Common Codes:**
     *   `"44201"`: Ozone (O3)
     *   `"88101"`: PM2.5 - Local Conditions
@@ -42,6 +44,7 @@ A 5-digit numerical code that identifies the parameter being measured. These cod
 **Example:** `35.5`
 
 The actual data value of the specified parameter.
+
 *   **Precision:** Round data to the 5th decimal place if the measured value has larger precision than 5 decimal places.
 *   **Formatting:** Do not use commas (e.g., use `1500`, not `1,500`).
 *   **Missing Data:** Leave the field blank (CSV: `,,`) if the data is missing. Do not use a fill value such as `-999`. Do not use empty string "".
@@ -52,6 +55,7 @@ The actual data value of the specified parameter.
 **Example:** `"008"` (ppb)
 
 A 3-digit code associated with the units of the measurement.
+
 *   **Common Codes:**
     *   `"008"`: Parts per billion (ppb)
     *   `"001"`: Micrograms/cubic meter (µg/m³) at 25°C
@@ -64,6 +68,7 @@ A 3-digit code associated with the units of the measurement.
 **Example:** `3600.0`
 
 The duration of the sampling period in seconds.
+
 *   `3600.0` = 1 Hour
 *   `60.0` = 1 Minute
 *   `900.0` = 15 Minutes
@@ -73,6 +78,7 @@ The duration of the sampling period in seconds.
 **Example:** `"170"` (Met One BAM-1020)
 
 A 3-digit code associated with the method used to perform an EPA-designated FRM or FEM measurement.
+
 *   **Sensors:** Leave this field blank (`,,`) if the device is a low-cost sensor or has not been EPA-designated.
 *   **Regulatory:** Required for FRM/FEM instruments.
 
@@ -95,6 +101,7 @@ These fields define *where* the measurement was taken.
 **Example:** `39.7392`
 
 Latitude in decimal degrees (WGS84).
+
 *   **Positive:** North of the Equator.
 *   **Negative:** South of the Equator.
 *   **Precision:** Report to the 5th decimal point (~1 meter precision).
@@ -104,6 +111,7 @@ Latitude in decimal degrees (WGS84).
 **Example:** `-104.9903`
 
 Longitude in decimal degrees (WGS84).
+
 *   **Positive:** East of the Prime Meridian.
 *   **Negative:** West of the Prime Meridian (e.g., USA).
 *   **Precision:** Report to the 5th decimal point.
@@ -139,6 +147,7 @@ These fields define *who* collected the data and *with what* hardware.
 **Example:** `"A123-Sensor-01"`
 
 Serial number of the device performing the measurement.
+
 *   **Allowed Characters:** Spaces and hyphens.
 *   **Forbidden:** Do not use commas or periods.
 
@@ -147,6 +156,7 @@ Serial number of the device performing the measurement.
 **Example:** `"CityOfDenver"` or `"city_of_denver"`
 
 Name of the party responsible for data oversight.
+
 *   **Formatting:** Use PascalCase or snake_case to separate words.
 *   **Forbidden:** Do not use commas, spaces, or periods.
 
@@ -155,6 +165,7 @@ Name of the party responsible for data oversight.
 **Example:** `"PurpleAir"`, `"Teledyne"`
 
 Name of the manufacturer associated with the device.
+
 *   **Formatting:** Use PascalCase or snake_case.
 *   **Forbidden:** Do not use commas, spaces, or periods.
 
