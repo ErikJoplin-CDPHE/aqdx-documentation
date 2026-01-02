@@ -152,7 +152,7 @@ Name of the party responsible for data oversight.
 
 ### device_manufacturer_name
 **Format:** String (64) &emsp;&emsp;
-**Example:** `PurpleAir`, `Teledyne`
+**Example:** `"PurpleAir"`, `"Teledyne"`
 
 Name of the manufacturer associated with the device.
 *   **Formatting:** Use PascalCase or snake_case.
