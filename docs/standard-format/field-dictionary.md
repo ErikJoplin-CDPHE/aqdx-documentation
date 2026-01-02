@@ -127,6 +127,7 @@ Elevation of the device in meters above mean sea level (MSL).
 **Example:** `[-104.9903, 39.7392]`
 
 **(JSON Only)** To comply with GeoJSON, the longitude and latitude are included as a list under the `location.coordinates` key.
+
 *   **Order:** Always `[lon, lat]` (Longitude first).
 
 ---
