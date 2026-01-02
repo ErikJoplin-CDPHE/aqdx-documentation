@@ -18,7 +18,7 @@ These fields define *what* was measured, *when* it was measured, and *how much* 
 
 ### datetime
 **Format:** ISO 8601 String (29) &emsp;&emsp;
-**Example:** `"2008-10-08T12:00:43-06:00"`
+**Example:** `2008-10-08T12:00:43-06:00`
 
 The date and time of the data value. It must follow the "Date and time with the offset" ISO 8601 format `YYYY-MM-DDThh:mm:ssTZD`, where `TZD` is the Time Zone Designator (offset from UTC). See also: https://en.wikipedia.org/wiki/ISO_8601
 
@@ -28,14 +28,14 @@ The date and time of the data value. It must follow the "Date and time with the 
 ****
 ### parameter_code
 **Format:** String (5) &emsp;&emsp;
-**Example:** `"44201"` (Ozone)
+**Example:** `44201` (Ozone)
 
 A 5-digit numerical code that identifies the parameter being measured. These codes are based on the EPA's Air Quality System (AQS) parameter library.
 
 *   **Common Codes:**
-    *   `"44201"`: Ozone (O3)
-    *   `"88101"`: PM2.5 - Local Conditions
-    *   `"61101"`: Wind Speed
+    *   `44201`: Ozone (O3)
+    *   `88101`: PM2.5 - Local Conditions
+    *   `61101`: Wind Speed
 *   **Note:** Only list one parameter code per data record.
 *   [View Parameter Codes](../appendices/parameter-codes.md)
 
@@ -52,15 +52,15 @@ The actual data value of the specified parameter.
 
 ### unit_code
 **Format:** String (3) &emsp;&emsp;
-**Example:** `"008"` (ppb)
+**Example:** `008` (ppb)
 
 A 3-digit code associated with the units of the measurement.
 
 *   **Common Codes:**
-    *   `"008"`: Parts per billion (ppb)
-    *   `"001"`: Micrograms/cubic meter (µg/m³) at 25°C
-    *   `"105"`: Micrograms/cubic meter (µg/m³) at Local Conditions
-    *   `"017"`: Degrees Centigrade (°C)
+    *   `008`: Parts per billion (ppb)
+    *   `001`: Micrograms/cubic meter (µg/m³) at 25°C
+    *   `105`: Micrograms/cubic meter (µg/m³) at Local Conditions
+    *   `017`: Degrees Centigrade (°C)
 *   **Note:** Leave blank if the `value` is missing.
 
 ### duration
@@ -75,7 +75,7 @@ The duration of the sampling period in seconds.
 
 ### method_code
 **Format:** String (3) &emsp;&emsp;
-**Example:** `"170"` (Met One BAM-1020)
+**Example:** `170` (Met One BAM-1020)
 
 A 3-digit code associated with the method used to perform an EPA-designated FRM or FEM measurement.
 
@@ -145,7 +145,7 @@ These fields define *who* collected the data and *with what* hardware.
 
 ### device_id
 **Format:** String (64) &emsp;&emsp;
-**Example:** `"A123-Sensor-01"`
+**Example:** `A123-Sensor-01`
 
 Serial number of the device performing the measurement.
 
@@ -154,7 +154,7 @@ Serial number of the device performing the measurement.
 
 ### data_steward_name
 **Format:** String (64) &emsp;&emsp;
-**Example:** `"CityOfDenver"` or `"city_of_denver"`
+**Example:** `CityOfDenver` or `city_of_denver`
 
 Name of the party responsible for data oversight.
 
@@ -163,7 +163,7 @@ Name of the party responsible for data oversight.
 
 ### device_manufacturer_name
 **Format:** String (64) &emsp;&emsp;
-**Example:** `"PurpleAir"`, `"Teledyne"`
+**Example:** `PurpleAir`, `Teledyne`
 
 Name of the manufacturer associated with the device.
 
@@ -228,12 +228,12 @@ The validity status of the individual measurement.
 
 ### qualifier_codes
 **Format:** String (254) &emsp;&emsp;
-**Example:** `"IM"`
+**Example:** `IM`
 
 Space-separated codes explaining why data was flagged or describing specific events.
 
 *   **Examples:** 
-    *   `"IM"` (Prescribed Fire)
-    *    `"LJ"` (High Winds)
-    *    `"AA AG BG ND"` (Multiple qualifier codes in one measurement)
+    *   `IM` (Prescribed Fire)
+    *    `LJ` (High Winds)
+    *    `AA AG BG ND` (Multiple qualifier codes in one measurement)
 *   See the full list of AQS Qualifier Codes: https://aqs.epa.gov/aqsweb/documents/codetables/qualifiers.html
