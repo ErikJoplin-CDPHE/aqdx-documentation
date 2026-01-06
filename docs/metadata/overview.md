@@ -19,30 +19,39 @@ In AQDx Version 3, metadata is exchanged via a **YAML** file (`.yaml`) rather th
 > **Download:** [AQDx_metadata_form_v3.yaml](../assets/AQDx_metadata_form_v3.yaml) (Template)
 
 ## Metadata Scope & Structure
-The metadata is organized into three primary sections. Fields within these sections are designated as either **Applicable to All** (required for everyone) or **Applicable to Regulatory** (required only for compliance monitoring).
+The metadata is organized into three primary sections. Fields within these sections are designated as either:
+
+ **Applicable to All** (required for everyone)
+ **Applicable to Regulatory** (required only for compliance monitoring).
 
 ### 1. Data Steward Details
-*   **Who is responsible?**
+**Who is responsible?**
+
 *   Contains contact information for the organization or individual managing the dataset.
 *   Defines the `aqdx_data_version` and whether the dataset is considered `regulatory`.
 
 ### 2. Sites & Instruments
-*   **Where was it measured?**
-    *   Site location (Lat/Lon), surroundings (Urban/Rural), and physical environment.
-*   **What was used?**
-    *   Instruments are nested **within** the Site they belong to.
-    *   Includes `device_id`, `parameter_code`, sampling frequency, and inlet details (e.g., probe height, airflow).
+**Where was it measured?**
+
+*   Site location (Lat/Lon), surroundings (Urban/Rural), and physical environment.
+
+**What was used?**
+
+*   Instruments are nested **within** the Site they belong to.
+*   Includes `device_id`, `parameter_code`, sampling frequency, and inlet details (e.g., probe height, airflow).
 
 ### 3. Data Quality Details
-*   **How good is the data?**
+**How good is the data?**
+
 *   Describes the Quality Assurance (QA) and Quality Control (QC) processes.
 *   Documents if the data has been corrected, reviewed, or audited.
 
 ## "All" vs. "Regulatory" Data
 AQDx distinguishes between general monitoring (e.g., community science, research) and regulatory monitoring (e.g., compliance with EPA NAAQS).
 
-*   **All Instruments (Base Requirements):** Fields in the YAML marked "Applicable to All" must be completed by every user. These cover the basics needed to plot and interpret the data physically.
-*   **Regulatory Instruments (Extended Requirements):** If the `is_regulatory_data` field is set to `1` (Yes), additional fields become required. These include AQS codes, monitoring scales, and specific audit details necessary for government reporting.
+**All Instruments (Base Requirements):** Fields in the YAML marked "Applicable to All" must be completed by every user. These cover the basics needed to plot and interpret the data physically.
+
+**Regulatory Instruments (Extended Requirements):** If the `is_regulatory_data` field is set to `1` (Yes), additional fields become required. These include AQS codes, monitoring scales, and specific audit details necessary for government reporting.
 
 ## Completing the Form
 1.  **Download** the [AQDx_metadata_form_v3.yaml](../assets/AQDx_metadata_form_v3.yaml) template.
