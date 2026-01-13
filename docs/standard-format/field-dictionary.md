@@ -10,7 +10,6 @@ These fields define *what* was measured, *when* it was measured, and *how much* 
 | [**datetime**](#datetime) | ISO 8601 <br> String (29) | **Yes** | The date and time of the measurement (start of the sampling period). |
 | [**parameter_code**](#parameter_code) | String (5) | **Yes** | The 5-digit AQS code identifying the pollutant or variable. |
 | [**parameter_value**](#parameter_value) | Decimal (12,5) | **Yes** | The actual measured value. |
-| [**detection_limit**](#detection_limit) | Decimal (12,5) | No | Detection limit for the method used to measure `parameter_value`|
 | [**unit_code**](#unit_code) | String (3) | **Yes** | The 3-digit AQS code identifying the unit of measure. |
 | [**duration**](#duration) | Decimal (9,3) | **Yes** | The duration of the sample in seconds. |
 | [**method_code**](#method_code) | String (3) | **Yes** | The 3-digit code for the measurement method. |
@@ -50,15 +49,6 @@ The actual data value of the specified parameter.
 *   **Formatting:** Do not use commas (e.g., use `1500`, not `1,500`).
 *   **Missing Data:** Leave the field blank (CSV: `,,`) if the data is missing. Do not use a fill value such as `-999`. Do not use empty string "".
 *   **Whole Numbers:** Always include a decimal point (e.g., `85.0` instead of `85`).
- 
-### detection_limit
-**Format:** Decimal (12,5) &emsp;&emsp;
-**Example:** `0.50000`
-
-* The detection limit for the measurement, expressed in the same units as `parameter_value` (i.e., the record’s `unit_code`).
-* This field is optional and should be left blank/omitted when a detection limit is unknown, not applicable, or only documented at a higher (instrument/project) level. 
-* Please note the method used to determine the detection limit in the metadata form included with the submission
-
 
 ### unit_code
 **Format:** String (3) &emsp;&emsp;
@@ -191,6 +181,7 @@ These fields describe the quality and processing level of the data.
 | [**review_level_code**](#review_level_code) | Integer (1) | **Yes** | What level of human review has occurred? |
 | [**qc_code**](#qc_code) | Integer (1) | **Yes** | The assessed validity of the measurement. |
 | [**qualifier_codes**](#qualifier_codes) | String (254) | No | Space-separated codes explaining flags. |
+| [**detection_limit**](#detection_limit) | Decimal (12,5) | No | Detection limit for the method used to measure `parameter_value`|
 
 <br>
 
@@ -246,3 +237,11 @@ Space-separated codes explaining why data was flagged or describing specific eve
     *    `LJ` (High Winds)
     *    `AA AG BG ND` (Multiple qualifier codes in one measurement)
 *   See the full list of AQS Qualifier Codes: https://aqs.epa.gov/aqsweb/documents/codetables/qualifiers.html
+
+### detection_limit
+**Format:** Decimal (12,5) &emsp;&emsp;
+**Example:** `0.50000`
+
+* The detection limit for the measurement, expressed in the same units as `parameter_value` (i.e., the record’s `unit_code`).
+* This field is optional and should be left blank/omitted when a detection limit is unknown, not applicable, or only documented at a higher (instrument/project) level. 
+* Please note the method used to determine the detection limit in the metadata form included with the submission
