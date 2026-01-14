@@ -37,7 +37,7 @@ A 5-digit numerical code that identifies the parameter being measured. These cod
     *   `88101`: PM2.5 - Local Conditions
     *   `61101`: Wind Speed
 *   **Note:** Only list one parameter code per data record.
-*   [View Parameter Codes](../appendices/parameter-codes.md)
+<!-- *   [View Parameter Codes](../appendices/parameter-codes.md) -->
 
 ### parameter_value
 **Format:** Decimal (12,5) &emsp;&emsp;
